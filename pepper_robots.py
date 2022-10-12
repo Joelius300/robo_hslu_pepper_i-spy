@@ -132,7 +132,7 @@ class PepperConfiguration(object):
 
 class Robot(object):
 
-    def __init__(self, configuration, reset = False):
+    def __init__(self, configuration, full_reset=False, reset_ai=True):
         self.configuration = configuration
         self.connection_url = "tcp://" + configuration.IpPort
         self.app = qi.Application(["OurProject", "--qi-url=" + self.connection_url])
@@ -223,9 +223,11 @@ class Robot(object):
         self.ALVisionToolbox = ALVisionToolbox(self.session)
         self.DCM = DCM(self.session)
 
-        if reset:
+        if full_reset or reset_ai:
             if self.ALAutonomousLife.getState() != "disabled":
                 self.ALAutonomousLife.setState("disabled")
+
+        if full_reset:
             self.ALRobotPosture.goToPosture("StandInit", 0.5)
             self.ALTextToSpeech.setLanguage("English")
             self.ALTextToSpeech.setVolume(0.3)

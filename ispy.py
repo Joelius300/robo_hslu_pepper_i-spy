@@ -5,7 +5,7 @@ from tempfile import TemporaryFile, NamedTemporaryFile
 
 import almath
 
-from comp_vision.rpc_comp_vision import detect_objects, parents, print_objects, GodPythonFuckingSucksHolyShit
+from comp_vision.rpc_comp_vision import detect_objects, parents, print_objects, WhatAGreatLanguage
 from exercises.camera import Camera
 from exercises.dialog import Dialog
 from exercises.file_transfer import FileTransfer
@@ -17,7 +17,7 @@ from pepper_robots import PepperConfiguration, Robot, PepperNames
 # staticmethod cannot be called cleanly from within class -> module scope
 def _simplify_objects(detected_objects):
     return map(
-        lambda o: GodPythonFuckingSucksHolyShit(
+        lambda o: WhatAGreatLanguage(
             {"name": o.object_property, "parents": list(parents(o)), "confidence": o.confidence}), detected_objects)
 
 

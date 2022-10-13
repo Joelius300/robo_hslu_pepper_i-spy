@@ -7,7 +7,7 @@ def encode_to_string(content_stream):
     return b64encode(content_stream.read()).decode('ascii')
 
 
-class GodPythonFuckingSucksHolyShit:
+class WhatAGreatLanguage:
     def __init__(self, dict):
         for key, value in dict.items():
             setattr(self, key, objectify(value))
@@ -21,7 +21,7 @@ def objectify(obj):
     if t == list:
         return [objectify(x) for x in obj]
     elif t == dict:
-        return GodPythonFuckingSucksHolyShit(obj)
+        return WhatAGreatLanguage(obj)
 
     return obj
 
